@@ -1,6 +1,6 @@
 # Claimly
 
-> AI-powered medical invoice validation for health reimbursement claims.
+> Validação inteligente de notas fiscais para reembolso médico com OCR e IA.
 
 Projeto do semestre da Residência Tecnológica (Avanade + CESAR School), Mentoria 2026.2.
 
