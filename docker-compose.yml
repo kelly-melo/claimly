@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: claimly-db
+    environment:
+      POSTGRES_DB: claimly
+      POSTGRES_USER: claimly
+      POSTGRES_PASSWORD: claimly
+    ports:
+      - "5432:5432"
+    volumes:
+      - claimly-data:/var/lib/postgresql/data
+
+volumes:
+  claimly-data:
