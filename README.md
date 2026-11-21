@@ -82,8 +82,6 @@ Nota fiscal  →  OpenCV  →  Tesseract  →  IA (LLM)  →  Spring Boot  →  
 
 ## MVP
 
-## API
-
 - Tela de envio simples e mobile-first, com status e motivo na hora
 - Endpoint `POST /reembolsos/validar`
 - Pipeline mínimo: OpenCV → Tesseract → IA (JSON)
@@ -91,12 +89,16 @@ Nota fiscal  →  OpenCV  →  Tesseract  →  IA (LLM)  →  Spring Boot  →  
 - Resultado salvo no PostgreSQL
 - Demo final com 3 casos: nota aprovada, nota fora do prazo e foto ilegível
 
+## API
+
+`POST /reembolsos/validar`: recebe a nota fiscal (JPG, PNG ou PDF, até 10MB) no campo `arquivo` (multipart/form-data) e retorna o status, os motivos e a data da validação.
+
 ## Status do projeto
 
 - [x] Definição do problema e da solução
 - [x] Estrutura inicial do projeto Spring Boot
 - [x] Endpoint de upload
-- [x] Persistência no PostgreSQL 
+- [x] Persistência no PostgreSQL
 - [ ] Tratamento de imagem (OpenCV)
 - [ ] OCR (Tesseract)
 - [ ] Extração com IA
