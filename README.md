@@ -98,13 +98,15 @@ Nota fiscal  →  OpenCV  →  Tesseract  →  IA (LLM)  →  Spring Boot  →  
 - [x] Definição do problema e da solução
 - [x] Estrutura inicial do projeto Spring Boot
 - [x] Endpoint de upload
-- [x] Persistência no PostgreSQL
 - [ ] Tratamento de imagem (OpenCV)
 - [ ] OCR (Tesseract)
 - [ ] Extração com IA
-- [ ] Regras de negócio
+- [x] Regras de negócio (campos obrigatórios, CPF, CNPJ e prazo de 90 dias)
+- [ ] Regras que dependem do banco (CNPJ credenciado e cobertura do procedimento)
+- [ ] Persistência no PostgreSQL (entidade e repositório criados, falta testar)
 - [ ] Tela de envio
-- [ ] Testes e deploy
+- [x] Testes unitários das regras de validação
+- [ ] Deploy
 
 ## Como rodar
 
