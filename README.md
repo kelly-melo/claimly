@@ -50,8 +50,8 @@ Se a IA não encontrar um campo, ele retorna `null` (sem inventar informações)
 ## Regras de validação
 
 1. Todos os campos obrigatórios foram encontrados
-2. CPF do paciente confere com o titular/dependente do plano
-3. CNPJ do prestador é de clínica/laboratório credenciado
+2. CPF do paciente é válido e confere com o titular/dependente do plano
+3. CNPJ do prestador é válido e de clínica/laboratório credenciado
 4. Data de emissão dentro de 90 dias
 5. Procedimento consta na cobertura do plano
 6. Valor da nota confere com o pedido de reembolso
@@ -72,12 +72,13 @@ Nota fiscal  →  OpenCV  →  Tesseract  →  IA (LLM)  →  Spring Boot  →  
 
 | Tecnologia | Uso |
 | --- | --- |
-| Java + Spring Boot | Backend e regras de negócio |
+| Java 21 + Spring Boot | Backend e regras de negócio |
 | REST API | Endpoints da aplicação |
-| OpenCV | Tratamento da imagem (rotação, contraste, ruído) |
-| Tesseract | OCR: transforma imagem em texto |
-| IA (LLM via API) | Transforma texto em JSON estruturado |
-| PostgreSQL | Armazenamento de documentos e resultados |
+| OpenCV | Tratamento da imagem (escala de cinza, ampliação, ruído, binarização) |
+| Tesseract (Tess4J) | OCR: transforma imagem em texto |
+| Apache PDFBox | Converte PDF em imagem |
+| Google Gemini (API) | Transforma o texto do OCR em JSON estruturado |
+| PostgreSQL + Docker | Armazenamento de documentos e resultados |
 | Git / GitHub | Versionamento |
 
 ## MVP
@@ -98,9 +99,9 @@ Nota fiscal  →  OpenCV  →  Tesseract  →  IA (LLM)  →  Spring Boot  →  
 - [x] Definição do problema e da solução
 - [x] Estrutura inicial do projeto Spring Boot
 - [x] Endpoint de upload
-- [ ] Tratamento de imagem (OpenCV)
-- [ ] OCR (Tesseract)
-- [ ] Extração com IA
+- [x] Tratamento de imagem (OpenCV)
+- [x] OCR (Tesseract)
+- [x] Extração com IA (Gemini)
 - [x] Regras de negócio (campos obrigatórios, CPF, CNPJ e prazo de 90 dias)
 - [ ] Regras que dependem do banco (CNPJ credenciado e cobertura do procedimento)
 - [ ] Persistência no PostgreSQL (entidade e repositório criados, falta testar)
