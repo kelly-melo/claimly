@@ -24,11 +24,11 @@ public class ExtratorDadosNota {
             {{texto}}
             """;
 
-    private final GeminiClient gemini;
+    private final GroqClient ia;
     private final ObjectMapper mapper;
 
     public DadosNotaFiscal extrair(String textoOcr) {
-        String json = gemini.gerarJson(PROMPT.replace("{{texto}}", textoOcr));
+        String json = ia.gerarJson(PROMPT.replace("{{texto}}", textoOcr));
         try {
             return mapper.readValue(limpar(json), DadosNotaFiscal.class);
         } catch (Exception e) {
