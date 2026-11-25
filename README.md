@@ -195,11 +195,11 @@ O teste `ClaimlyApplicationTests` sobe o contexto completo e precisa do PostgreS
 
 Foram usadas 3 notas fictícias:
 
-| Nota | Resultado esperado |
-| --- | --- |
-| Nota válida, emitida dentro de 90 dias | **APROVADO** |
-| Nota emitida há mais de 90 dias | **REPROVADO** (prazo vencido) |
-| Foto borrada, torta e cortada | **REPROVADO** (documento ilegível) |
+| Nota | Resultado | Print |
+| --- | --- | --- |
+| Nota válida, emitida dentro de 90 dias | **APROVADO** | <img src="docs/aprovada.png" alt="Nota aprovada" width="300"> |
+| Nota emitida há mais de 90 dias | **REPROVADO** (prazo vencido) | <img src="docs/fora-do-prazo.png" alt="Nota fora do prazo" width="300"> |
+| Foto borrada, torta e cortada | **REPROVADO** (documento ilegível) | <img src="docs/ilegivel.png" alt="Nota ilegível" width="300"> |
 
 ## Decisões técnicas
 
